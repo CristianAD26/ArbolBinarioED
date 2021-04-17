@@ -1,3 +1,8 @@
+//Cristian Eduardo Aguirre Duarte
+//Carne 20231
+//Algoritmos y estructura de datos
+//Hoja de trabajo 7
+
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,10 +16,10 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         ArbolBinario<Comparador> Arbol = new ArbolBinario<Comparador>();
         int opciones=0,opciones2=0;
-        boolean Iterador = false;
-        boolean Iterador2=false;
+        boolean control1 = false;
+        boolean control2=false;
         
-        while (!Iterador){
+        while (!control1){
         	try {
         		 
         		System.out.println("Comencemos a traducir! En que idioma esta el texto que quiere traducir?");
@@ -24,15 +29,15 @@ public class Main {
             switch(opciones) {
             	case 1:
             		Idioma="Ingles";
-            		Iterador=true;
+            		control1=true;
             		break;
             	case 2:
             		Idioma="Espanol";
-            		Iterador=true;
+            		control1=true;
             		break;
             	case 3:
             		Idioma="Frances";
-            		Iterador=true;
+            		control1=true;
             	default:
             		System.out.println("Ingrese una opcion valida");
             		break;
@@ -49,8 +54,7 @@ public class Main {
 
     
         entrada.nextLine();
-        Iterador2=false;
-        while (!Iterador2){
+        while (!control2){
         	try {
         	     System.out.println("A que idioma desea realizar la traduccion? ");
         	     System.out.println("\n1 Ingles\n2 Espanol\n3 Frances");
@@ -59,15 +63,15 @@ public class Main {
             switch(opciones2) {
             	case 1:
             		IdiomaTraducido="Ingles";
-            		Iterador2=true;
+            		control2=true;
             		break;
             	case 2:
             		IdiomaTraducido="Frances";
-            		Iterador2=true;
+            		control2=true;
             		break;
             	case 3:
             		IdiomaTraducido="Espanol";
-            		Iterador2=true;
+            		control2=true;
             		break;
             	default:
             		System.out.println("Ingrese una opcion valida");
@@ -104,7 +108,7 @@ public class Main {
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String Texto = myReader.nextLine();
-                System.out.println("\nTexto a traducir:");
+                System.out.println("\nIdioma: "+ Idioma);
                 System.out.println(Texto);
                 Texto=Texto.replace("*","");
                 String[] palabras = Texto.split(" ");
@@ -114,7 +118,7 @@ public class Main {
                     }
                 }
                 Texto = String.join(" ",palabras);
-                System.out.println("\nTexto traducido:");
+                System.out.println("\nIdioma: "+ IdiomaTraducido);
                 System.out.println(Texto);
             }
             myReader.close();

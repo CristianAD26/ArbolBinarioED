@@ -1,3 +1,8 @@
+//Cristian Eduardo Aguirre Duarte
+//Carne 20231
+//Algoritmos y estructura de datos
+//Hoja de trabajo 7
+
 public class ArbolBinario<E extends Comparable<E>> {
 
     Nodo<E> root;
@@ -30,17 +35,15 @@ public class ArbolBinario<E extends Comparable<E>> {
         E rootValue = root.getValue();
         Nodo<E> child;
 
-        // found at root: done
         if (rootValue.compareTo(value) == 0) return root;
-        // look left if less-than, right if greater-than
+        // izquierda si es menor, derecha si es mayor
         if (value.compareTo(rootValue) < 0)
         {
             child = root.right;
         } else {
             child = root.left;
         }
-        // no child there: not in tree, return this node,
-        // else keep searching
+        // Ya que no hay mas hojasm devuleve el nodo, si no sigue buscando
         if (child == null) {
             return null;
         } else {
@@ -57,13 +60,10 @@ public class ArbolBinario<E extends Comparable<E>> {
         if (node == null)
             return;
 
-        /* first recur on left child */
         printArbol(node.right);
 
-        /* then print the data of node */
         System.out.print(node.getValue().toString());
 
-        /* now recur on right child */
         printArbol(node.left);
     }
 

@@ -1,3 +1,8 @@
+//Cristian Eduardo Aguirre Duarte
+//Carne 20231
+//Algoritmos y estructura de datos
+//Hoja de trabajo 7
+
 public class Comparador implements Comparable<Comparador>{
     String ingles;
     String frances;
