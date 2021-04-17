@@ -3,16 +3,16 @@ public class ArbolBinario<E extends Comparable<E>> {
     Nodo<E> root;
 
 
-    private Nodo<E> addRecursive(Nodo<E> current, E value) {
+    private Nodo<E> Agregar(Nodo<E> current, E value) {
 
         if (current == null) {
             return new Nodo<E>(value);
         }
 
         if (value.compareTo(current.getValue()) < 0) {
-            current.right = addRecursive(current.right, value);
+            current.right = Agregar(current.right, value);
         } else if (value.compareTo(current.getValue()) > 0) {
-            current.left = addRecursive(current.left, value);
+            current.left = Agregar(current.left, value);
         } else {
             // value already exists
             return current;
@@ -22,10 +22,10 @@ public class ArbolBinario<E extends Comparable<E>> {
     }
 
     public void add(E value) {
-        root = addRecursive(root, value);
+        root = Agregar(root, value);
     }
 
-    public Nodo<E> locateRecursive(Nodo<E> root, E value)
+    public Nodo<E> InOrder(Nodo<E> root, E value)
     {
         E rootValue = root.getValue();
         Nodo<E> child;
@@ -44,31 +44,31 @@ public class ArbolBinario<E extends Comparable<E>> {
         if (child == null) {
             return null;
         } else {
-            return locateRecursive(child, value);
+            return InOrder(child, value);
         }
     }
 
     public Nodo<E> locate(E value){
-        return locateRecursive(root, value);
+        return InOrder(root, value);
     }
 
-    private void printInorderRecursive(Nodo<E> node)
+    private void printArbol(Nodo<E> node)
     {
         if (node == null)
             return;
 
         /* first recur on left child */
-        printInorderRecursive(node.right);
+        printArbol(node.right);
 
         /* then print the data of node */
         System.out.print(node.getValue().toString());
 
         /* now recur on right child */
-        printInorderRecursive(node.left);
+        printArbol(node.left);
     }
 
     public void printInorder(){
-        printInorderRecursive(root);
+        printArbol(root);
     }
 
 }
