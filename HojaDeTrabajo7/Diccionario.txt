@@ -1,0 +1,10 @@
+house,casa, loger
+dog,perro,chien
+homework,tarea,devoirs
+woman,mujer,femme
+town,pueblo,ville
+yes,si,Oui
+man,hombre,homme
+bus,bus,autobus
+when,cuando,lorsque
+doing,haciendo,faire
